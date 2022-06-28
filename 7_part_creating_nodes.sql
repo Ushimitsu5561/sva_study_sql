@@ -1,6 +1,6 @@
 -- Начало раздела создания узла
 -- Обновляем ключи существующего дерева, узлы стоящие за родительским узлом
--- узел ид 7, ур 3, лев 13, пр 20
+-- узел ид 7, ур 3, лвк 13, прк 20
 -- UPDATE my_tree SET left_key = left_key + 2, right_key = right_key + 2 WHERE left_key > 20
 
 -- Обновляем родительскую ветку
@@ -8,12 +8,12 @@
 
 --Теперь добавляем новый узел
 
-INSERT INTO my_tree(name, left_key, right_key, level) VALUES((SELECT concat('Узел', COUNT(name) + 1) AS n FROM  my_tree), 20, 20 + 1, 3 + 1);
+-- INSERT INTO my_tree(name, left_key, right_key, level) VALUES((SELECT concat('Узел', COUNT(name) + 1) AS n FROM  my_tree), 20, 20 + 1, 3 + 1);
 
---UPDATE my_tree SET right_key = right_key + 2, left_key = IF(left_key > $right_key, left_key + 2, left_key) WHERE right_key >= $right_key 
+-- UPDATE my_tree SET right_key = right_key + 2, left_key = IF(left_key > $right_key, left_key + 2, left_key) WHERE right_key >= $right_key 
 
 
---DELETE FROM my_tree WHERE id = 19;
+-- DELETE FROM my_tree WHERE id = 19;
 
 
 
